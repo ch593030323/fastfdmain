@@ -24,6 +24,7 @@ w_sys_manage_basicdataimport_bt::w_sys_manage_basicdataimport_bt(QWidget *parent
     ui->label_unit->setText(htmlCannotEmpty(QObject::tr("单位编号")));
     ui->label_discount->setText(QObject::tr("折扣"));
     ui->label_barcode->setText(QObject::tr("条码"));
+    ui->label_name_2->setText(QObject::tr("名称") + "2");
 
 
     connect(ui->pushButton_2, SIGNAL(clicked()), this, SLOT(tocancel()));
@@ -80,6 +81,7 @@ void w_sys_manage_basicdataimport_bt::took()
                                     datalist << qrtVariantPair("ch_stopflag", "N");
                                     if(ui->spinBox_discount->value() >= 0) datalist << qrtVariantPair("ch_discount", lines.value(ui->spinBox_discount->value()));
                                     if(ui->spinBox_barcode->value() >= 0) datalist << qrtVariantPair("vch_barcode", lines.value(ui->spinBox_barcode->value()));
+                                    if(ui->spinBox_name_2->value() >= 0) datalist << qrtVariantPair("vch_dishname_2", lines.value(ui->spinBox_name_2->value()));
 
                                     if(query.execInsert("cey_bt_dish", datalist)) {
                                         QString ch_dish_typeno = lds_query_hddpos::pairListValue(datalist, "ch_dish_typeno").toString();
