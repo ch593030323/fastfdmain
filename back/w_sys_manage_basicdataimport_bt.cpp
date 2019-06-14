@@ -26,7 +26,6 @@ w_sys_manage_basicdataimport_bt::w_sys_manage_basicdataimport_bt(QWidget *parent
     ui->label_barcode->setText(QObject::tr("条码"));
     ui->label_name_2->setText(QObject::tr("名称") + "2");
 
-
     connect(ui->pushButton_2, SIGNAL(clicked()), this, SLOT(tocancel()));
     connect(ui->pushButton_import, SIGNAL(clicked()), this, SLOT(took()));
     connect(ui->checkBox_3, SIGNAL(toggled(bool)), ui->spinBox_type, SLOT(setVisible(bool)));
